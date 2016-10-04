@@ -1,3 +1,3 @@
-# codificacio-multimedia
+# Pràctiques ea
 
 Ariadna Xicota Matencio
