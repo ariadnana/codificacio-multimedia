@@ -5,6 +5,8 @@
 	<title> Botiga </title>
 	<script language="javascript" src="funciones.js"></script>
 	<link rel="stylesheet" href="estilos.css" type="text/css"/>
+	<script src=https://code.jquery.com/jquery-3.1.1.min.js></script>
+	<script src="client.js"></script>
 </head>
 <body>
 <header>
@@ -12,8 +14,8 @@
 </header>
 
 <div id="MENU"class="menu">
-    			<input type="button" value="Tots els artícles" onClick="window.location.href='/tot.html'">
-    			<input type="button" value="ofertes" onClick="window.location.href='/ofertes.html'">
+    			<input class="btn" type="button" value="Tots els artícles" onClick="window.location.href='/tot.html'">
+    			<input class="btn" type="button" value="ofertes" onClick="window.location.href='/ofertes.html'">
 <br>
 <br>
 	</div>	
@@ -49,8 +51,7 @@
 	    <img src="https://images-na.ssl-images-amazon.com/images/I/51hFJvNRW0L._SX327_BO1,204,203,200_.jpg">
 		<br>It<br>10,93€<br>
 		<input type="button" value="comprar" onclick="comprar('It', 10.93);">
-    </article>
-	<article class="imagen">
+    </article>	<article class="imagen">
 		<br>
 	    <img src="https://images-na.ssl-images-amazon.com/images/I/51P-1VHhybL._SX359_BO1,204,203,200_.jpg">
 		<br>Chico y Rita<br>20,90€<br>
