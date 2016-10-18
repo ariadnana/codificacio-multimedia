@@ -1,0 +1,32 @@
+img{
+  width: 200px;
+  height:300px;
+}
+
+.imagen{
+	width: 300px;
+	height:400px;
+	float:left;
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+	margin-right:10px;
+	margin-bottom: 10px;
+}
+
+#contenedor{
+	width: 1300px;
+	margin: 0 auto;
+}
+
+h1{
+ text-align:center;
+}
+
+aside{
+	text-align: right;
+}
+
+.menu{
+	text-align: center;	
+}
