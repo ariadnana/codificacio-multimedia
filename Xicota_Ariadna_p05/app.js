@@ -16,7 +16,8 @@ app.use("/public",express.static('public'));
 
 //articles
 var pics={
-
+	new Item ("https://images-na.ssl-images-amazon.com/images/I/61LRryne08L._SX385_BO1,204,203,200_.jpg", "Un monstruo viene a verme.",."14,20€"),
+	new Item ("https://images-na.ssl-images-amazon.com/images/I/51Uzj2WnFgL._SX339_BO1,204,203,200_.jpg", "El hogar de miss Peregrine para niños peculiares", "11.90")
 }
 
 // Render frontpage
