@@ -1,14 +1,11 @@
-/**
- * Created by boyander on 11/10/16.
- */
 $(document).ready(function(){
 
-    $('img').mouseenter(function() {
-        $(this).animate({width:'225px',height:'325px'},'fast');
+    $('img-rounded').mouseenter(function() {
+        $(this).animate({zoom:'1.1'},'fast');
         $(this).parent().addClass("selected");
     });
-    $('img').mouseout(function() {
-        $(this).animate({width:'200px', height:'300px'},'fast');
+    $('img-rounded').mouseout(function() {
+        $(this).animate({zoom:'1'},'fast');
         $(this).parent().addClass("selected");
     });
 });

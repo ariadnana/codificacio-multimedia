@@ -1,6 +1,4 @@
-/**
- * Created by boyander on 11/10/16.
- */
+
 $(document).ready(function(){
 
     $('img').mouseenter(function() {
