@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; width: 220px; }
+      form button {margin:3px; width:100px ; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      /*#messages { list-style-type: none; margin: 0; padding: 0; }*/
+      span {margin:3px; padding: 5px 10px; }
+      /*#messages li:nth-child(odd) { background: #eee; }*/
+    </style>
+  </head>
+  <body>
+    <span id="marc.a">0</span><span id="marc.b">0</span>
+    <form action="">
+      <button id="bA">EquipA +1</button><button id="bB">EquipB +1</button>
+    </form>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var socket = io();
+      $('#bA').submit(function(){
+        $('#marc.a').val($('#marc.a').val()+1);
+	var marcador{
+		A:getElementByID("marc.a");
+		B:getElementByID("marc.b");
+	};
+        socket.emit('chat message', marcado);
+        return false;
+      });
+      socket.on('chat message', function(marcador){
+	var par=getElementByID("marc.a");
+        par.parentNode.replaceChild(marcador.A,par);
+	var parr=getElementByID("marc.b");
+        parr.parentNode.replaceChild(marcador.B,parr);
+      });
+    </script>
+  </body>
+</html>
