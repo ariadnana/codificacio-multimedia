@@ -1,20 +1,26 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-var marcador{
-	A: 0;
-	B: 0;
+var marcador = {
+	A:0,
+	B:0	
 };
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  res.sendfile('index.html');
 });
 
 io.on('connection', function(socket){
-  socket.on('chat message', function(marcador){
-    io.emit('chat message', marcador);
-  });
+  socket.on('golA', function(){
+        marcador.A+=1;
+        io.emit('dibuixarmarcador', marcador);
+    });
+    socket.on('golB', function(){
+        marcador.B+=1;
+        io.emit('dibuixarmarcador', marcador);
+});
 });
 
 http.listen(3000, function(){
