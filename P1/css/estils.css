@@ -1,0 +1,23 @@
+h1{
+ color: #008B8B;
+ text-align:center;
+}
+h2{
+	color: #20B2AA;
+}
+img{
+	width:20%;
+	margin-left:400px;
+}
+body{
+	font-family: Arial;
+	background: #E0FFEF;
+}
+#cos {
+  width: 1000px;
+  margin: 0 auto;
+}
+.blau{
+	color:#008B8B;
+	text-align:center;
+}

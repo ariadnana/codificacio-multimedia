@@ -1,0 +1,13 @@
+body{
+	font-family: Arial;
+	line-height: 200%;
+}
+input:invalid{
+	border-color: red;
+	box-shadow: 0px 0px 2px red; 
+	-webkit-box-shadow: 0px 0px 2px red;
+}
+input:valid{
+	box-shadow: 0px 0px 2px green; 
+	-webkit-box-shadow: 0px 0px 2px green;
+}
