@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    var map;
+    function initMap() {
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: pos.coords.latitude, lng: pos.coords.longitude},
+                zoom: 8
+            });
+
+            var llocs=[
+                    ['Ets aquí',  pos.coords.latitude, pos.coords.longitude],
+                    ['UAB', 41.502366, 2.104316],
+                    ['EET', 41.564098, 2.022316300000057],
+                    ['UB', 41.386455, 2.163966],
+                    ['UPC', 41.387553, 2.113280]
+            ];
+
+            var infowindow = new google.maps.InfoWindow();
+
+            Marker = new google.maps.Marker({
+                position: new google.maps.LatLng(llocs[0][1],llocs[0][2]),
+                map: map,
+                icon: 'img.png'
+            });
+            google.maps.event.addListener(Marker, 'click', (function(Marker){
+                return function () {
+                    infowindow.setContent(llocs[0][0]);
+                    infowindow.open(map, Marker);
+
+                }
+            })(Marker));
+
+            for (var i=1; i<llocs.length; i++){
+                Marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(llocs[i][1],llocs[i][2]),
+                    map: map
+                });
+                google.maps.event.addListener(Marker, 'click', (function(Marker,i){
+                    return function () {
+                        infowindow.setContent(llocs[i][0]);
+                        infowindow.open(map, Marker);
+
+                    }
+                })(Marker, i));
+            }
+        })
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwfeWjsh1pkPsZj9E1XdDQBBuPmVPH1kU&callback=initMap"
+        async defer></script>
+</body>
+</html>
